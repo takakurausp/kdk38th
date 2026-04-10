@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>第38回日本環境動物昆虫学会年次大会</title>
     <link rel="icon" type="image/png" href="icon.png">
-    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600&family=Noto+Serif+JP:wght@400;600;700&display=swap" rel="stylesheet">
@@ -435,6 +435,18 @@
             details > .accordion-body { display: block !important; }
         }
 
+        /* ── Tabs ── */
+        .tab-button {
+            font-size: 0.9rem;
+            transition: all 0.2s ease;
+        }
+        .tab-button.active {
+            color: #1a2744;
+            border-bottom-color: #9a7c3f !important;
+            border-bottom-width: 2px;
+            font-weight: 600;
+        }
+
         /* ── Footer ── */
         footer {
             background: #13203a;
@@ -471,6 +483,7 @@
                 <div class="hidden md:flex items-center space-x-7">
                     <a href="#overview" class="nav-link">概要</a>
                     <a href="#schedule" class="nav-link">日程</a>
+                    <a href="#program" class="nav-link">プログラム</a>
                     <a href="#registration" class="nav-link">申込・参加費</a>
                     <a href="#presentation" class="nav-link">発表方法</a>
                     <a href="#access" class="nav-link">アクセス</a>
@@ -486,6 +499,7 @@
             <div class="max-w-6xl mx-auto px-4 py-3 space-y-1">
                 <a href="#overview" class="mobile-link">概要</a>
                 <a href="#schedule" class="mobile-link">日程</a>
+                <a href="#program" class="mobile-link">プログラム</a>
                 <a href="#registration" class="mobile-link">申込・参加費</a>
                 <a href="#presentation" class="mobile-link">発表方法</a>
                 <a href="#access" class="mobile-link">アクセス</a>
@@ -598,7 +612,86 @@
             </div>
         </section>
 
-        <!-- Registration -->
+        <!-- Program -->
+        <section id="program" class="section-padding" style="border-bottom: 1px solid #ddd8ce;">
+            <h2 class="section-heading">プログラム</h2>
+            <div class="space-y-10">
+
+                <!-- Public Symposium -->
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4" style="font-family: 'Noto Serif JP', serif; color: #1a2744; border-bottom: 2px solid #9a7c3f; padding-bottom: 0.5rem;">市民公開シンポジウム</h3>
+                    <div class="card">
+                        <div class="text-center py-10">
+                            <p class="text-gray-600 mb-2">近い将来にプログラムを掲載します。</p>
+                            <div class="inline-flex items-center justify-center px-4 py-2 bg-gray-100 text-gray-500 rounded-lg">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                                </svg>
+                                工事中
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- General Presentations -->
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4" style="font-family: 'Noto Serif JP', serif; color: #1a2744; border-bottom: 2px solid #9a7c3f; padding-bottom: 0.5rem;">一般講演</h3>
+                    
+                    <!-- Tabs -->
+                    <div class="border-b border-gray-300 mb-6">
+                        <div class="flex space-x-2">
+                            <button id="tab-oral1" class="tab-button px-4 py-2 font-medium text-gray-600 border-b-2 border-transparent hover:text-gray-800 transition-colors" onclick="switchTab('oral1')">口頭発表 1日目</button>
+                            <button id="tab-oral2" class="tab-button px-4 py-2 font-medium text-gray-600 border-b-2 border-transparent hover:text-gray-800 transition-colors" onclick="switchTab('oral2')">口頭発表 2日目</button>
+                            <button id="tab-poster" class="tab-button px-4 py-2 font-medium text-gray-600 border-b-2 border-transparent hover:text-gray-800 transition-colors" onclick="switchTab('poster')">ポスター発表</button>
+                        </div>
+                    </div>
+
+                    <!-- Tab Content -->
+                    <div id="tab-content-oral1" class="tab-content">
+                        <div class="card">
+                            <div class="text-center py-10">
+                                <p class="text-gray-600 mb-2">11月14日（土）の口頭発表プログラム</p>
+                                <div class="inline-flex items-center justify-center px-4 py-2 bg-gray-100 text-gray-500 rounded-lg">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                                    </svg>
+                                    工事中
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="tab-content-oral2" class="tab-content" style="display: none;">
+                        <div class="card">
+                            <div class="text-center py-10">
+                                <p class="text-gray-600 mb-2">11月15日（日）の口頭発表プログラム</p>
+                                <div class="inline-flex items-center justify-center px-4 py-2 bg-gray-100 text-gray-500 rounded-lg">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                                    </svg>
+                                    工事中
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="tab-content-poster" class="tab-content" style="display: none;">
+                        <div class="card">
+                            <div class="text-center py-10">
+                                <p class="text-gray-600 mb-2">ポスター発表プログラム（11月14日）</p>
+                                <div class="inline-flex items-center justify-center px-4 py-2 bg-gray-100 text-gray-500 rounded-lg">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                                    </svg>
+                                    工事中
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section id="registration" class="section-padding" style="border-bottom: 1px solid #ddd8ce;">
             <h2 class="section-heading">参加・講演申込</h2>
             <div class="card" style="margin-bottom: 1.5rem;">
@@ -614,39 +707,39 @@
                             <tr>
                                 <th>項目</th>
                                 <th>区分</th>
-                                <th class="col-highlight">事前申込（9/30まで）</th>
-                                <th>当日 / 直前申込（10/1以降）</th>
+                                <th class="col-highlight" style="text-align: center;">事前申込（9/30まで）</th>
+                                <th style="text-align: center;">当日 / 直前申込（10/1以降）</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
                                 <td rowspan="2" style="font-weight: 500;">大会参加費</td>
                                 <td>一般会員</td>
-                                <td><span class="fee-amount">5,000円</span></td>
-                                <td>6,000円</td>
+                                <td style="text-align: center;"><span class="fee-amount">5,000円</span></td>
+                                <td style="text-align: center;">6,000円</td>
                             </tr>
                             <tr>
                                 <td>非会員</td>
-                                <td><span class="fee-amount">7,000円</span></td>
-                                <td>8,000円</td>
+                                <td style="text-align: center;"><span class="fee-amount">7,000円</span></td>
+                                <td style="text-align: center;">8,000円</td>
                             </tr>
                             <tr>
                                 <td style="font-weight: 500;">大会参加費（学生）</td>
                                 <td>会員・非会員問わず</td>
-                                <td><span class="fee-amount">2,000円</span></td>
-                                <td>3,000円</td>
+                                <td style="text-align: center;"><span class="fee-amount">2,000円</span></td>
+                                <td style="text-align: center;">3,000円</td>
                             </tr>
                             <tr>
                                 <td style="font-weight: 500;">懇親会費</td>
                                 <td>一般</td>
-                                <td><span class="fee-amount">7,000円</span></td>
-                                <td>8,000円</td>
+                                <td style="text-align: center;"><span class="fee-amount">7,000円</span></td>
+                                <td style="text-align: center;">8,000円</td>
                             </tr>
                             <tr>
                                 <td style="font-weight: 500;">懇親会費（学生）</td>
                                 <td>学生</td>
-                                <td><span class="fee-amount">3,000円</span></td>
-                                <td>4,000円</td>
+                                <td style="text-align: center;"><span class="fee-amount">3,000円</span></td>
+                                <td style="text-align: center;">4,000円</td>
                             </tr>
                         </tbody>
                     </table>
@@ -851,6 +944,43 @@
         btn.addEventListener('click', () => menu.classList.toggle('hidden'));
         document.querySelectorAll('#mobile-menu a').forEach(link => {
             link.addEventListener('click', () => menu.classList.add('hidden'));
+        });
+
+        // Tab switching function
+        function switchTab(tabName) {
+            // Hide all tab contents
+            document.querySelectorAll('.tab-content').forEach(content => {
+                content.style.display = 'none';
+            });
+
+            // Remove active class from all tabs
+            document.querySelectorAll('.tab-button').forEach(tab => {
+                tab.classList.remove('active');
+                tab.style.borderBottom = '2px solid transparent';
+            });
+
+            // Show selected tab content
+            const selectedContent = document.getElementById('tab-content-' + tabName);
+            if (selectedContent) {
+                selectedContent.style.display = 'block';
+            }
+
+            // Add active class to selected tab
+            const selectedTab = document.getElementById('tab-' + tabName);
+            if (selectedTab) {
+                selectedTab.classList.add('active');
+                selectedTab.style.borderBottom = '2px solid #9a7c3f';
+            }
+        }
+
+        // Initialize first tab as active
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set first tab as active
+            const firstTab = document.getElementById('tab-oral1');
+            if (firstTab) {
+                firstTab.classList.add('active');
+                firstTab.style.borderBottom = '2px solid #9a7c3f';
+            }
         });
     </script>
 </body>
